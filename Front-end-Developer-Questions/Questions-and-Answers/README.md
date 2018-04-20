@@ -1,9 +1,9 @@
-#前端开发面试题
+# 前端开发面试题
 
 ## <a name='preface'>前言</a> ##
 
 
-[只看问题点这里 ](http://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
+[只看问题点这里 ](https://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
 
 [看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
 
@@ -26,19 +26,20 @@
 1. 资深的前端开发能把absolute和relative弄混，这样的人不要也罢，因为团队需要的是：你这个人具有可以依靠的才能（靠谱）。
 
 
-
-**前端开发知识点：**
+**前端开发所需掌握知识点概要：**
 
 	HTML&CSS：
-		对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
-		HTML5、CSS3、Flexbox
-
+		对Web标准的理解（结构、表现、行为）、浏览器内核、渲染原理、依赖管理、兼容性、CSS语法、层次关系，常用属性、布局、选择器、权重、盒模型、
+		Hack、CSS预处理器、CSS3、Flexbox、CSS Modules、Document flow、BFC、HTML5（离线 & 存储、Histoy,多媒体、WebGL\SVG\Canvas）；		
 	JavaScript：
-        数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
-		DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
+        数据类型、运算、对象、Function、继承、闭包、作用域、事件、Prototype、RegExp、JSON、Ajax、DOM、BOM、
+        内存泄漏、跨域、异步请求、模板引擎、模块化、Flux、同构、算法、ECMAScript6、Nodejs、HTTP、
 
 	其他：
-        移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力
+        主流MVVM框架(React\Vue\Angular)、Hybrid App\React Native\Weex、TypeScript、RESTFul、WEB安全、前端工程化、依赖管理、性能优化、
+        重构、团队协作、可维护、易用性、SEO、UED、前端技术选型、快速学习能力等；
+
+
 
 作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
 
@@ -75,10 +76,10 @@
 	格式不断修改更新中。
 
 	更新记录：
-	2016年3月25日：新增ECMAScript6 相关问题
+	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
+	2016-10-20： 更新一些已被发现的问题。
+	2016-03-25： 新增ECMAScript6 相关问题
 
-
-###更新时间:  2016-3-25
 
 
 
@@ -86,11 +87,11 @@
 
 - Doctype作用？标准模式与兼容模式各有什么区别?
 
-		（1）、<!DOCTYPE>声明位于位于HTML文档中的第一行，处于 <html> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。
+		（1）、<!DOCTYPE>声明位于HTML文档中的第一行，处于 <html> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。
 
 		（2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。
 
-- HTML5 为什么只需要写 <!DOCTYPE HTML>？
+- HTML5 为什么只需要写 `<!DOCTYPE HTML>`？
 
 		 HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；
 
@@ -143,8 +144,7 @@
 
 
 
-- html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和
-HTML5？
+- html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
 
 
 		* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
@@ -204,7 +204,7 @@ HTML5？
 		3、在离线状态时，操作window.applicationCache进行需求实现。
 
 	详细的使用请参考：
-	
+
 	[HTML5 离线缓存-manifest简介](http://yanhaijing.com/html/2014/12/28/html5-manifest/)
 
 	[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
@@ -276,7 +276,7 @@ HTML5？
 
 		通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
 		在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
-		
+
 
 - 如何在页面上实现一个圆形的可点击区域？
 
@@ -301,13 +301,13 @@ HTML5？
 		strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
 
 		i内容展示为斜体，em表示强调的文本；
-		
+
 		Physical Style Elements -- 自然样式标签
 		b, i, u, s, pre
 		Semantic Style Elements -- 语义样式标签
 		strong, em, ins, del, code
 		应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
-		
+
 
 ## <a name='css'>CSS</a>
 
@@ -340,12 +340,12 @@ HTML5？
 - CSS优先级算法如何计算？
 
 		*   优先级就近原则，同权重情况下样式定义最近者为准;
-
 		*   载入样式以最后载入的定位为准;
 
 		优先级为:
-		   !important >  id > class > tag
-		   	important 比 内联优先级高
+			同权重: 内联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）。
+			!important >  id > class > tag
+			important 比 内联优先级高
 
 - CSS3新增伪类有那些？
 
@@ -356,8 +356,8 @@ HTML5？
 			p:only-child		选择属于其父元素的唯一子元素的每个 <p> 元素。
 			p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
 
-			:after			在元素之前添加内容,也可以用来做清除浮动。
-			:before			在元素之后添加内容
+			::after			在元素之前添加内容,也可以用来做清除浮动。
+			::before			在元素之后添加内容
 	 	    :enabled  		
 			:disabled 		控制表单控件的禁用状态。
 			:checked        单选框或复选框被选中。
@@ -385,7 +385,7 @@ HTML5？
 				right: 0;
 				background-color: pink;	/* 方便看效果 */
 			}
-			
+
 	*  水平垂直居中一
 
 			确定容器的宽高 宽500 高 300 的层
@@ -393,40 +393,40 @@ HTML5？
 
 			div {
 				position: relative;		/* 相对定位或绝对定位均可 */
-				width:500px; 
+				width:500px;
 				height:300px;
 				top: 50%;
 				left: 50%;
 				margin: -150px 0 0 -250px;     	/* 外边距为自身宽高的一半 */
 				background-color: pink;	 	/* 方便看效果 */
-				  
+
 			 }
 
 	*  水平垂直居中二
-				
+
 			未知容器的宽高，利用 `transform` 属性
-			
+
 			div {
 				position: absolute;		/* 相对定位或绝对定位均可 */
-				width:500px; 
+				width:500px;
 				height:300px;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				background-color: pink;	 	/* 方便看效果 */
-				  
+
 			}
 
 	*  水平垂直居中三
-	
+
 			利用 flex 布局
 			实际使用时应考虑兼容性
-			
+
 			.container {
-				display: flex; 
+				display: flex;
 				align-items: center; 		/* 垂直居中 */
 				justify-content: center;	/* 水平居中 */
-				
+
 			}
 			.container div {
 				width: 100px;
@@ -553,7 +553,7 @@ HTML5？
 
 
 - li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
-		
+
 		行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。
 
 
@@ -597,13 +597,20 @@ HTML5？
 
 - CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
 
+	对于普通元素visibility:collapse;会将元素完全隐藏,不占据页面布局空间,与display:none;表现相同.
+	如果目标元素为table,visibility:collapse;将table隐藏,但是会占据页面布局空间.
+	仅在Firefox下起作用,IE会显示元素,Chrome会将元素隐藏,但是占据空间.
+
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
+	如果元素的display为none,那么元素不被渲染,position,float不起作用,如果元素拥有position:absolute;或者position:fixed;属性那么元素将为绝对定位,float不起作用.如果元素float属性不是none,元素会脱离文档流,根据float属性值来显示.有浮动,绝对定位,inline-block属性的元素,margin不会和垂直方向上的其他元素margin折叠.
+	
 - 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
 		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。
 		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
+
 - css定义的权重
 
 		以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
@@ -637,11 +644,11 @@ HTML5？
 		1、父级div定义height；
 		2、父级div 也一起浮动；
 		3、常规的使用一个class；
-			.clearfix:before, .clearfix:after {
+			.clearfix::before, .clearfix::after {
 			    content: " ";
 			    display: table;
 			}
-			.clearfix:after {
+			.clearfix::after {
 			    clear: both;
 			}
 			.clearfix {
@@ -649,7 +656,7 @@ HTML5？
 			}
 
 		4、SASS编译的时候，浮动元素的父级div定义伪类:after
-			&:after,&:before{
+			&::after,&::before{
 			    content: " ";
 		        visibility: hidden;
 		        display: block;
@@ -666,10 +673,15 @@ HTML5？
 
 		通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
 
+- 什么是外边距合并？
 
-- zoom:1的清楚浮动原理?
+		外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+		合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+		w3school介绍网址： http://www.w3school.com.cn/css/css_margin_collapsing.asp
 
-		清楚浮动，触发hasLayout；
+- zoom:1的清除浮动原理?
+
+		清除浮动，触发hasLayout；
 		Zoom属性是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决ie下比较奇葩的bug。
 		譬如外边距（margin）的重叠，浮动清除，触发ie的haslayout属性等。
 
@@ -690,7 +702,7 @@ HTML5？
 	<!-- link元素中的CSS媒体查询 -->
 	当媒体查询为真时，相关的样式表或样式规则会按照正常的级联规被应用。
 	当媒体查询返回假， <link> 标签上带有媒体查询的样式表 仍将被下载 （只不过不会被应用）。
-	
+
 	<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
 
 	<!-- 样式表中的CSS媒体查询 -->
@@ -746,7 +758,7 @@ HTML5？
 - 视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）
 
 - ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。
-	
+
 		单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。（伪元素由双冒号和伪元素名称组成）
 		双冒号是在当前规范中引入的，用于区分伪类和伪元素。不过浏览器需要同时支持旧的已经存在的伪元素写法，
 		比如:first-line、:first-letter、:before、:after等，
@@ -776,7 +788,7 @@ HTML5？
 		1、用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。
 		2、使用12px及12px以上字体大小：为了兼容各大主流浏览器，建议设计美工图时候设置大于或等于12px的字体大小，如果是接单的这个时候就需要给客户讲解小于12px浏览器不兼容等事宜。
 		3、继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置-webkit-text-size-adjust:none，做到最大兼容考虑。
-		4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。        
+		4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。
 
 - 让页面里的字体变清晰，变细用CSS怎么做？
 
@@ -832,6 +844,10 @@ HTML5？
 		  是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。
 
 
+- rem布局的优缺点
+
+
+
 
 ## <a name='js'>JavaScript</a>
 
@@ -847,7 +863,7 @@ HTML5？
 
 		数据封装类对象：Object、Array、Boolean、Number 和 String
 		其他对象：Function、Arguments、Math、Date、RegExp、Error
-		
+
 		参考：http://www.ibm.com/developerworks/cn/web/wa-objectsinjs-v1b/index.html
 
 -  说几条写JavaScript的基本规范？
@@ -887,20 +903,68 @@ HTML5？
 			// Func { name="Sean", getInfo=function()}
 
 
-			
+
 
 -  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
 
-		栈：原始数据类型（Undefined，Null，Boolean，Number、String） 
+		栈：原始数据类型（Undefined，Null，Boolean，Number、String）
 		堆：引用数据类型（对象、数组和函数）
 
 		两种类型的区别是：存储位置不同；
 		原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；
 		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体
-		
+
 	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
 
+- 如何将字符串转化为数字，例如'12.3b'?
 
+		* parseFloat('12.3b');
+		* 正则表达式，'12.3b'.match(/(\d)+(\.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已。
+
+- 如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
+
+		function commafy(num){
+			return num && num
+				.toString()
+				.replace(/(\d)(?=(\d{3})+\.)/g, function($1, $2){
+					return $2 + ',';
+				});
+		}
+
+- 如何实现数组的随机排序？
+		
+		方法一：
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			function randSort1(arr){
+				for(var i = 0,len = arr.length;i < len; i++ ){
+					var rand = parseInt(Math.random()*len);
+					var temp = arr[rand];
+					arr[rand] = arr[i];
+					arr[i] = temp;
+				}
+				return arr;
+			}
+			console.log(randSort1(arr));
+			
+		方法二：
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			function randSort2(arr){
+				var mixedArray = [];
+				while(arr.length > 0){
+					var randomIndex = parseInt(Math.random()*arr.length);
+					mixedArray.push(arr[randomIndex]);
+					arr.splice(randomIndex, 1);
+				}
+				return mixedArray;
+			}
+			console.log(randSort2(arr));
+
+		方法三：
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			arr.sort(function(){
+				return Math.random() - 0.5;
+			})
+			console.log(arr);
 
 -  Javascript如何实现继承？
 
@@ -910,21 +974,20 @@ HTML5？
 		4、拷贝继承
 
 		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
-```javascript
-		function Parent(){
-        	this.name = 'wang';
-		}
 		
-		function Child(){
-			this.age = 28;
-		}
-		Child.prototype = new Parent();//继承了Parent，通过原型
-		
-		var demo = new Child();
-		alert(demo.age);
-		alert(demo.name);//得到被继承的属性
+			function Parent(){
+				this.name = 'wang';
+			}
 
-```
+			function Child(){
+				this.age = 28;
+			}
+			Child.prototype = new Parent();//继承了Parent，通过原型
+
+			var demo = new Child();
+			alert(demo.age);
+			alert(demo.name);//得到被继承的属性
+
 - JavaScript继承的几种实现方式？
   - 参考：[构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)，[非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)；
 
@@ -934,7 +997,7 @@ HTML5？
 		javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用。
 
 
-		1、对象字面量的方式   
+		1、对象字面量的方式
 
 			person={firstname:"Mark",lastname:"Yun",age:25,eyecolor:"black"};
 
@@ -964,7 +1027,7 @@ HTML5？
 
 
 		4、用工厂方式来创建（内置对象）
-	
+
 			 var wcDog =new Object();
 			 wcDog.name="旺财";
 			 wcDog.age=3;
@@ -977,7 +1040,7 @@ HTML5？
 		5、用原型方式来创建
 
 			function Dog(){
-			
+
 			 }
 			 Dog.prototype.name="旺财";
 			 Dog.prototype.eat=function(){
@@ -991,13 +1054,13 @@ HTML5？
 
 			function Car(name,price){
 			  this.name=name;
-			  this.price=price; 
+			  this.price=price;
 			}
 			 Car.prototype.sell=function(){
 			   alert("我是"+this.name+"，我现在卖"+this.price+"万元");
 			  }
 			var camry =new Car("凯美瑞",27);
-			camry.sell(); 
+			camry.sell();
 
 -  Javascript作用链域?
 
@@ -1006,9 +1069,12 @@ HTML5？
 		直至全局函数，这种组织形式就是作用域链。
 
 -  谈谈This对象的理解。
-  - this总是指向函数的直接调用者（而非间接调用者）；
-  - 如果有new关键字，this指向new出来的那个对象；
-  - 在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window；
+
+	```
+  	this总是指向函数的直接调用者（而非间接调用者）；
+	如果有new关键字，this指向new出来的那个对象；
+	在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window；
+	```
 
 -  eval是做什么的？
 
@@ -1018,11 +1084,13 @@ HTML5？
 
 -  什么是window对象? 什么是document对象?
 
+		window对象是指浏览器打开的窗口。
+		document对象是Documentd对象（HTML 文档对象）的一个只读引用，window对象的一个属性。
 
 -  null，undefined 的区别？
 
 		null 		表示一个对象是“没有值”的值，也就是值为“空”；
-		undefined 	表示一个变量没有被声明，不存在这个值，或者被声明了但没有被赋值；
+		undefined 	表示一个变量声明了没有初始化(赋值)；
 
 		undefined不是一个有效的JSON，而null是；
 		undefined的类型(typeof)是undefined；
@@ -1034,19 +1102,19 @@ HTML5？
 
 	    typeof undefined
 			//"undefined"
-			undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined； 
+			undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined；
 			例如变量被声明了，但没有赋值时，就等于undefined
 
 		typeof null
 			//"object"
 			null : 是一个对象(空对象, 没有任何属性和方法)；
 			例如作为函数的参数，表示该函数的参数不是对象；
-	
+
 		注意：
 			在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
  			null == undefined // true
   			null === undefined // false
-		
+
 		再来一个例子：
 
 			null
@@ -1054,11 +1122,13 @@ HTML5？
 			A：有！
 			Q：张三有房子么？
 			A：没有！
-	
+
 			undefined
 			Q：有张三这个人么？
-			A：没有！
-	
+			A：有！
+			Q: 张三有多少岁？
+			A: 不知道（没有被告诉）
+
 	参考阅读：[undefined与null的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
 
@@ -1143,15 +1213,15 @@ HTML5？
 			};
 
 -  ["1", "2", "3"].map(parseInt) 答案是多少？
-		
+
 		parseInt() 函数能解析一个字符串，并返回一个整数，需要两个参数 (val, radix)，
 		其中 radix 表示要解析的数字的基数。【该值介于 2 ~ 36 之间，并且字符串中的数字不能大于radix才能正确返回数字结果值】;
 		但此处 map 传了 3 个 (element, index, array),我们重写parseInt函数测试一下是否符合上面的规则。
 
-		function parseInt(str, radix) {   
-		    return str+'-'+radix;   
-		};  
-		var a=["1", "2", "3"];  
+		function parseInt(str, radix) {
+		    return str+'-'+radix;
+		};
+		var a=["1", "2", "3"];
 		a.map(parseInt);  // ["1-0", "2-1", "3-2"] 不能大于radix
 
 		因为二进制里面，没有数字3,导致出现超范围的radix赋值和不合法的进制解析，才会返回NaN
@@ -1266,12 +1336,12 @@ HTML5？
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
         如：{"age":"12", "name":"back"}
-        
+
         JSON字符串转换为JSON对象:
 		var obj =eval('('+ str +')');
 		var obj = str.parseJSON();
 		var obj = JSON.parse(str);
-		
+
 		JSON对象转换为JSON字符串：
 		var last=obj.toJSONString();
 		var last=JSON.stringify(obj);
@@ -1297,18 +1367,30 @@ HTML5？
 		(5)获取异步调用返回的数据
 		(6)使用JavaScript和DOM实现局部刷新
 
+- Ajax 解决浏览器缓存问题？
+
+		1、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("If-Modified-Since","0")。
+
+        2、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("Cache-Control","no-cache")。
+
+        3、在URL后面加上一个随机数： "fresh=" + Math.random();。
+
+        4、在URL后面加上时间戳："nowtime=" + new Date().getTime();。
+
+        5、如果是使用jQuery，直接这样就可以了 $.ajaxSetup({cache:false})。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录。
+
 -  同步和异步的区别?
 
 	同步的概念应该是来自于OS中关于同步的概念:不同进程为协同完成某项工作而在先后次序上调整(通过阻塞,唤醒等方式).同步强调的是顺序性.谁先谁后.异步则不存在这种顺序性.
-	
-	
-	
+
+
+
 	同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作。
 
 	异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。
 
-	
-	
+
+
 	（待完善）
 
 -  如何解决跨域问题?
@@ -1316,6 +1398,11 @@ HTML5？
 		jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
 
 -  页面编码和被请求的资源编码如果不一致如何处理？
+
+-  服务器代理转发时，该如何处理cookie？
+
+		nginx
+	
 
 -  模块化开发怎么做？
 
@@ -1371,14 +1458,14 @@ HTML5？
 
 -  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
-	
+
 		参考：http://annn.me/how-to-realize-cmd-loader/
 
 -  JS模块加载器的轮子怎么造，也就是如何实现一个模块加载器？
 
 -  谈一谈你对ECMAScript6的了解？
 
--  ECMAScript6 怎么写class么，为什么会出现class这种东西? 
+-  ECMAScript6 怎么写class么，为什么会出现class这种东西?
 
 -  异步加载JS的方式有哪些？
 
@@ -1447,9 +1534,16 @@ HTML5？
 
 -  jquery中如何将数组转化为json字符串，然后再转化回来？
 
--  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？ 
+-  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？
 
 -  jquery.extend 与 jquery.fn.extend的区别？
+
+		* jquery.extend 为jquery类添加类方法，可以理解为添加静态方法
+		* jquery.fn.extend:
+			源码中jquery.fn = jquery.prototype，所以对jquery.fn的扩展，就是为jquery类添加成员函数
+		使用：
+		jquery.extend扩展，需要通过jquery类来调用，而jquery.fn.extend扩展，所有jquery实例都可以直接调用。
+
 
 -  jQuery 的队列是如何实现的？队列可以用在哪些地方？
 
@@ -1512,11 +1606,15 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
 
+		this === window ? 'browser' : 'node';
+
 		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
 
 -  移动端最小触控区域是多大？
 
 -  jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?
+
+		jquery stop(): 如：$("#div").stop().animate({width:"100px"},100);
 
 -  把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？
 
@@ -1538,6 +1636,14 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 -  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
 
+		* 多个事件同一个函数：
+			$("div").on("click mouseover", function(){});
+		* 多个事件不同函数
+			$("div").on({
+				click: function(){},
+				mouseover: function(){}
+			});
+
 -  Node.js的适用场景？
 
 -  (如果会用node)知道route, middleware, cluster, nodemon, pm2, server-side rendering么?
@@ -1547,6 +1653,8 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 什么是“前端路由”?什么时候适合使用“前端路由”? “前端路由”有哪些优点和缺点?
 
 - 知道什么是webkit么? 知道怎么用浏览器的各种工具来调试和debug代码么?
+
+		Chrome,Safari浏览器内核。
 
 - 如何测试前端代码么? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么(mocha, sinon, jasmin, qUnit..)?
 
@@ -1568,9 +1676,9 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		        });
 		}
 		console.log(commafy(1234567.90)); //1,234,567.90
-		
 
-	
+
+
 - 检测浏览器版本版本有哪些方式？
 
 		功能检测、userAgent特征检测
@@ -1580,7 +1688,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		  (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"
 
 
-- What is a Polyfill? 
+- What is a Polyfill?
 
 		polyfill 是“在旧版浏览器上复制标准 API 的 JavaScript 补充”,可以动态地加载 JavaScript 代码或库，在不支持这些标准 API 的浏览器中模拟它们。
 		例如，geolocation（地理位置）polyfill 可以在 navigator 对象上添加全局的 geolocation 对象，还能添加 getCurrentPosition 函数以及“坐标”回调对象，
@@ -1589,7 +1697,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 做的项目中，有没有用过或自己实现一些 polyfill 方案（兼容性处理方案）？
 
-		比如： html5shiv、Geolocation、Placeholder 
+		比如： html5shiv、Geolocation、Placeholder
 
 - 我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？
 
@@ -1598,38 +1706,142 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 		function getFileExtension(filename) {
 		  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
-		}	
+		}
 
 		String.lastIndexOf() 方法返回指定值（本例中的'.'）在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。
 		对于'filename'和'.hiddenfile'，lastIndexOf的返回值分别为0和-1无符号右移操作符(»>) 将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变。
 		String.prototype.slice() 从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为""。
-				
+
+- Webpack热更新实现原理?
+
+		1. Webpack编译期，为需要热更新的 entry 注入热更新代码(EventSource通信)
+		2. 页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端
+		3. 客户端获取到hash，这个hash将作为下一次请求服务端 hot-update.js 和 hot-update.json的hash
+		4. 修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端
+		5. 客户端获取到hash，成功后客户端构造hot-update.js script链接，然后插入主文档
+		6. hot-update.js 插入成功后，执行hotAPI 的 createRecord 和 reload方法，获取到 Vue 组件的 render方法，重新 render 组件， 继而实现 UI 无刷新更新。
+
+- 请介绍一下JS之事件节流？
+
+- 什么是JS的函数防抖？
 
 #### <a name='other'>ECMAScript6 相关</a>
 
-- Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？ 
-		
+- Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？
+
 		两等号判等，会在比较时进行类型转换；
-		三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）； 
+		三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）；
 
 		Object.is 在三等号判等的基础上特别处理了 NaN 、-0 和 +0 ，保证 -0 和 +0 不再相同，
 		但 Object.is(NaN, NaN) 会返回 true.
 
  		Object.is 应被认为有其特殊的用途，而不能用它认为它比其它的相等对比更宽松或严格。
 
+- ES6是如何实现编译成ES5的？
+
+- css-loader的原理？
 
 
+## <a name='other'>前端框架</a>
 
-#### <a name='other'>前端框架相关</a>
+- React 使用场景？
 
-- react-router 路由系统的实现原理？
+			逻辑复杂单页应用，偏中后台管理系统，纯展示性的UI页面不合适、
 
-- React中如何解决第三方类库的问题?
+- 描述一下React 生命周期
+
+			渲染过程调用到的生命周期函数，主要几个要知道；
+			* constructor 
+			* getInitialState 
+			* getDefaultProps 
+			* componentWillMount 
+			* render 
+			* componentDidMount 
+
+			更新过程
+
+			* componentWillReceiveProps 
+			* shouldComponentUpdate 
+			* componentWillUpdate 
+			* render 
+			* componentDidUpdate 
+
+			卸载过程
+
+			componentWillUnmount
+
+
+- 实现组件有哪些方式？
+
+		React.createClass 使用API来定义组件
+		React ES6 class component 用 ES6 的class 来定义组件
+		Functional stateless component 通过函数定义无状态组件
+
+
+- 应该在React生命周期的什么阶段发出ajax请求，为什么？
+
+				AJAX请求应在 componentDidMount函数 进行请求。
+
+- shouldComponentUpdate函数有什么作用？
+
+				shouldComponentUpdate是一个允许我们自行决定某些组件（以及他们的子组件）是否进行更新的生命周期函数，reconciliation的最终目的是尽可能以最有效的方式去根据新的state更新UI，
+				如果你已经知道UI的哪些状态无需进行改变，就没必要去让React去判断它是否该改变。 让shouldComponentUpdate返回falss, React就会让当前的组件和其子组件保持不变。
+
+- 当组件的setState函数被调用之后，发生了什么？
+
+				React会做的第一件事就是把你传递给setState的参数对象合并到组件原先的state。这个事件会导致一个“reconciliation”（调和）的过程。reconciliation的最终目标就是，
+				尽可能以最高效的方法，去基于新的state来更新UI。为了达到这个目的，React会构建一个React元素树（你可以把这个想象成一个表示UI的一个对象）。一旦这个树构建完毕，
+				React为了根据新的state去决定UI要怎么进行改变，它会找出这棵新树和旧树的不同之处。React能够相对精确地找出哪些位置发生了改变以及如何发生了什么变化，
+				并且知道如何只通过必要的更新来最小化重渲染。
+
+- 为什么循环产生的组件中要利用上key这个特殊的prop？
+
+				Keys负责帮助React跟踪列表中哪些元素被改变/添加/移除。React利用子元素的key在比较两棵树的时候，快速得知一个元素是新的还是刚刚被移除。没有keys，React也就不知道当前哪一个的item被移除了。
+
+- React-router 路由的实现原理？
+
+- 说说React Native,Weex框架的实现原理？
+
+- 受控组件(Controlled Component)与非受控组件(Uncontrolled Component)的区别
+
+- refs 是什么?
+
+			Refs是能访问DOM元素或组件实例的一个函数；
+
+- React为什么自己定义一套事件体系呢，与浏览器原生事件体系有什么关系？
+
+- 什么时候应该选择用class实现一个组件，什么时候用一个函数实现一个组件？
+
+			组件用到了state或者用了生命周期函数，那么就该使用Class component。其他情况下，应使用Functional component。
+
+- 什么是HoC（Higher-Order Component）？适用于什么场景？
+
+			高阶组件就是一个 React 组件包裹着另外一个 React 组件
+
+- 并不是父子关系的组件，如何实现相互的数据通信？
+
+			使用父组件，通过props将变量传入子组件 （如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件 ）
+
+- 用过 React 技术栈中哪些数据流管理库？
+
+			Redux\Dva
+
+- Redux是如何做到可预测呢？
+
+- Redux将React组件划分为哪两种？
+
+- Redux是如何将state注入到React组件上的？
+
+- 请描述一次完整的 Redux 数据流
+
+- React的批量更新机制 BatchUpdates？
+
+- React与Vue，各自的组件更新进行对比，它们有哪些区别？
 
 
 ## <a name='other'>其他问题</a>
 
-- 原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？
+- 原来公司工作流程是怎么样的，如何与其他人协作的？如何跨部门合作的？
 
 - 你遇到过比较难的技术问题是？你是如何解决的？
 
@@ -1665,18 +1877,18 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		HTTP服务器的文件缓存
 
 - 列举IE与其他浏览器不一样的特性？
-		
+
 
 		1、事件不同之处：
 
 		   	触发事件的元素被认为是目标（target）。而在 IE 中，目标包含在 event 对象的 srcElement 属性；
-			
+
 			获取字符代码、如果按键代表一个字符（shift、ctrl、alt除外），IE 的 keyCode 会返回字符代码（Unicode），DOM 中按键的代码和字符是分离的，要获取字符代码，需要使用 charCode 属性；
 
 			阻止某个事件的默认行为，IE 中阻止某个事件的默认行为，必须将 returnValue 属性设置为 false，Mozilla 中，需要调用 preventDefault() 方法；
 
 			停止事件冒泡，IE 中阻止事件进一步冒泡，需要设置 cancelBubble 为 true，Mozzilla 中，需要调用 stopPropagation()；
-		
+
 
 - 99%的网站都需要被重构是那本书上写的？
 
@@ -1863,14 +2075,18 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 从打开app到刷新出内容，整个过程中都发生了什么，如果感觉慢，怎么定位问题，怎么解决?
 
+- 第一次访问页面中时弹出引导，用户关闭引导，之后再次进入页面时不希望出现引导，如何实现？
+
+			localStorage
+
 - 除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
 - 你用的得心应手用的熟练地编辑器&开发环境是什么样子？
 
-		Sublime Text 3 + 相关插件编写前端代码
-		Google chrome 、Mozilla Firefox浏览器 +firebug 兼容测试和预览页面UI、动画效果和交互功能
-		Node.js+Gulp
-		git 用于版本控制和Code Review
+		Sublime Text 3 + 插件
+		Google chrome 查看页面UI、动画效果和交互功能，Firebug 兼容测试和
+		Node.js + webpack
+		Git 版本控制和Code Review
 
 - 对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
 
@@ -1895,6 +2111,11 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 你怎么看待Web App 、hybrid App、Native App？
 
 - 你移动端前端开发的理解？（和 Web 前端开发的主要区别是什么？）
+
+- 产品进行版本升级时，可能发生不兼容性问题，如何提前预防和解决？
+
+		非覆盖式发布，API新增而不是在原来的上面修改；
+		提前做好 @Deprecated的版本提示；
 
 - 你对加班的看法？
 
@@ -2025,13 +2246,12 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 	fork表示你想要补充完善这个项目的内容。
 
 	更新记录：
-	
-		2016年10月20日:更新一些已被发现的问题。
+	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
+	2016-10-20： 更新一些已被发现的问题。
+	2016-03-25： 新增ECMAScript6 相关问题
 
-		2016年3月25日：新增ECMAScript6 相关问题
 
-
-###更新时间:  2016年10月20日
+### 更新时间:  2018-01-14
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
 
